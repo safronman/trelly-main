@@ -1,0 +1,23 @@
+.task {
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  width: 300px;
+  cursor: pointer;
+}
+
+.default {
+  border: 5px solid black;
+  background: #ffffff;
+}
+
+.selected {
+  border: 5px solid blue;
+}
+
+.highPriority {
+  background: #fba675;
+}
+
+.completed {
+  text-decoration-line: line-through;
+}
