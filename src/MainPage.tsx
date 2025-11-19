@@ -16,6 +16,7 @@ export function MainPage() {
 	
 	return (
 		<div className={styles.container}>
+			<h1>111</h1>
 			<TasksList
 				selectedTaskId={selectedTaskId}
 				onTaskSelected={handleSelectedTask}
