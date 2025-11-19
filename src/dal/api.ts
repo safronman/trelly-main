@@ -1,8 +1,15 @@
+const prepareHeaders = () => {
+	const apiKey = import.meta.env.VITE_API_KEY
+	if (!apiKey) return undefined
+	
+	return {
+		'api-key': import.meta.env.VITE_API_KEY
+	}
+}
+
 export const getTask = (boardId: string, taskId: string) => {
 	const promise: Promise<GetTaskOutput> = fetch(`https://trelly.it-incubator.app/api/1.0/boards/${boardId}/tasks/${taskId}`, {
-		headers: {
-			'api-key': import.meta.env.VITE_API_KEY,
-		}
+		headers: prepareHeaders()
 	})
 		.then(res => res.json())
 	return promise
@@ -10,9 +17,7 @@ export const getTask = (boardId: string, taskId: string) => {
 
 export const getTasks = () => {
 	const promise: Promise<GlobalTaskListResponse> = fetch('https://trelly.it-incubator.app/api/1.0/boards/tasks', {
-		headers: {
-			'api-key': import.meta.env.VITE_API_KEY,
-		}
+		headers: prepareHeaders()
 	})
 		.then(res => res.json())
 	return promise
