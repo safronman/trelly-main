@@ -1,7 +1,7 @@
 import {useTaskSelection} from "./bll/useTaskSelection.ts";
 import {TaskDetails} from "./ui/TaskDetails.tsx";
 import {TasksList} from "./ui/TasksList.tsx";
-import styles from './MainPage.module.css'
+import s from './MainPage.module.css'
 
 export function MainPage() {
 	
@@ -15,7 +15,7 @@ export function MainPage() {
 	const handleResetTask = () => setSelectedTaskId(null);
 	
 	return (
-		<div className={styles.container}>
+		<div className={s.container}>
 			<TasksList
 				selectedTaskId={selectedTaskId}
 				onTaskSelected={handleSelectedTask}
